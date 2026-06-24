@@ -32,8 +32,9 @@ app = FastAPI(title="SteamSense API")
 # browser console — a very common first-timer confusion.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_origins=["http://localhost:3000", "http://localhost:5173","https://semanticstream.netlify.app"],
     # 3000 = Create React App default, 5173 = Vite default
+    
     # (we'll use Vite — explained below)
     allow_methods=["*"],
     allow_headers=["*"],
