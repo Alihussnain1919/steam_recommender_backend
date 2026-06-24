@@ -8,5 +8,5 @@ __pycache__/
 
 # Block giant data and model weight files from breaking GitHub limits
 
-models/*.npy
+
 
