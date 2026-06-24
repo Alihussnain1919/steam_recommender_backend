@@ -1,0 +1,12 @@
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+
+# Block giant data and model weight files from breaking GitHub limits
+data/raw/
+models/*.npy
+models/best_weights.txt

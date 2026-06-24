@@ -1,0 +1,296 @@
+{
+  "basic_before": {
+    "label": "raw",
+    "total_rows": 1000,
+    "missing": {
+      "app_id": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "name": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "short_description": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "detailed_description": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "genres": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "categories": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "price_eur": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "is_free": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "metacritic_score": {
+        "count": 708,
+        "percent": 70.8
+      },
+      "release_date": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "developers": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "publishers": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "platforms": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "header_image": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "tags": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "review_score": {
+        "count": 0,
+        "percent": 0.0
+      }
+    },
+    "exact_duplicates": 0,
+    "description": {
+      "avg_len": 225.8,
+      "short_count": 1
+    },
+    "price": {
+      "min": 0.0,
+      "max": 79.99,
+      "mean": 23.2
+    },
+    "genres": {
+      "Action": 540,
+      "Adventure": 425,
+      "Indie": 391,
+      "Simulation": 381,
+      "RPG": 321,
+      "Strategy": 268,
+      "Casual": 195,
+      "Early Access": 147,
+      "Free To Play": 129,
+      "Massively Multiplayer": 101,
+      "Sports": 49,
+      "Racing": 42,
+      "Utilities": 5,
+      "Animation & Modeling": 3,
+      "Design & Illustration": 3
+    }
+  },
+  "basic_after": {
+    "label": "clean",
+    "total_rows": 998,
+    "missing": {
+      "app_id": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "name": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "short_description": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "detailed_description": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "genres": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "categories": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "price_eur": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "is_free": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "metacritic_score": {
+        "count": 706,
+        "percent": 70.7
+      },
+      "release_date": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "developers": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "publishers": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "platforms": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "header_image": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "tags": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "review_score": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "richness_score": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "has_metacritic": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "metacritic_normalized": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "combined_text": {
+        "count": 0,
+        "percent": 0.0
+      }
+    },
+    "exact_duplicates": 0,
+    "description": {
+      "avg_len": 226.2,
+      "short_count": 0
+    },
+    "price": {
+      "min": 0.0,
+      "max": 79.99,
+      "mean": 23.18
+    },
+    "genres": {
+      "Action": 539,
+      "Adventure": 424,
+      "Indie": 391,
+      "Simulation": 380,
+      "RPG": 321,
+      "Strategy": 267,
+      "Casual": 195,
+      "Early Access": 147,
+      "Free To Play": 129,
+      "Massively Multiplayer": 101,
+      "Sports": 48,
+      "Racing": 42,
+      "Utilities": 5,
+      "Animation & Modeling": 3,
+      "Design & Illustration": 3
+    }
+  },
+  "advanced_checks": {
+    "semantic_duplicates": {
+      "count": 0,
+      "examples": []
+    },
+    "boilerplate_descriptions": {
+      "count": 2,
+      "examples": [
+        "Football Manager 26",
+        "FATAL FRAME II: Crimson Butterfly REMAKE"
+      ]
+    },
+    "tag_noise": {
+      "games_affected": 332,
+      "total_tags_removed": 422,
+      "noise_tag_list": [
+        "Gore",
+        "Mature",
+        "18+",
+        "Violent",
+        "Early Access",
+        "Downloadable Content",
+        "Free to Play",
+        "Nudity",
+        "Adult Only",
+        "Sexual Content",
+        "NSFW"
+      ]
+    },
+    "metacritic_bias": {
+      "has_score_count": 292,
+      "missing_count": 708,
+      "missing_percent": 70.8
+    },
+    "richness_scores": {
+      "mean": 86.4,
+      "poor_count": 0,
+      "great_count": 855
+    }
+  },
+  "cleaning_log": [
+    "Removed 0 exact duplicate app_ids",
+    "Removed 0 semantic duplicates (same game, different editions)",
+    "Removed 2 games with boilerplate/useless descriptions",
+    "Cleaned noise tags from all games: {'Gore', 'Mature', '18+', 'Violent', 'Early Access', 'Downloadable Content', 'Free to Play', 'Nudity', 'Adult Only', 'Sexual Content', 'NSFW'}",
+    "Added has_metacritic (0/1) and metacritic_normalized (0\u20131) columns",
+    "Fixed negative prices and capped extreme prices at \u20ac80",
+    "Normalized review_score labels",
+    "Stripped whitespace from all text columns",
+    "Created combined_text column for embeddings"
+  ],
+  "summary": {
+    "rows_before": 1000,
+    "rows_after": 998,
+    "rows_removed": 2,
+    "new_columns_added": [
+      "has_metacritic",
+      "metacritic_normalized",
+      "combined_text",
+      "richness_score"
+    ],
+    "columns_final": [
+      "app_id",
+      "name",
+      "short_description",
+      "detailed_description",
+      "genres",
+      "categories",
+      "price_eur",
+      "is_free",
+      "metacritic_score",
+      "release_date",
+      "developers",
+      "publishers",
+      "platforms",
+      "header_image",
+      "tags",
+      "review_score",
+      "richness_score",
+      "has_metacritic",
+      "metacritic_normalized",
+      "combined_text"
+    ]
+  }
+}

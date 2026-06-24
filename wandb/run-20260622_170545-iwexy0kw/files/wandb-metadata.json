@@ -1,0 +1,13 @@
+{
+  "os": "macOS-26.5.1-arm64-arm-64bit",
+  "python": "CPython 3.12.4",
+  "startedAt": "2026-06-22T15:05:45.351736Z",
+  "program": "/Users/macbookair/steam_recommender/src/tuning.py",
+  "codePath": "src/tuning.py",
+  "codePathLocal": "src/tuning.py",
+  "email": "alihussnain1919@gmail.com",
+  "root": "/Users/macbookair/steam_recommender",
+  "host": "MacBookAir.fritz.box",
+  "executable": "/Users/macbookair/steam_recommender/.venv/bin/python",
+  "writerId": "vrlay3ge8ghaeu1gkdv062dm265a07h1"
+}
