@@ -146,7 +146,7 @@ def search_by_text(query: str, top_n: int = 5, max_price: float = 80.0, genre: s
         raise HTTPException(status_code=400, detail="Query cannot be empty")
 
     # Encode the user's text into the same 384-dim space as the games
-    query_vector = text_model.encode([query])
+    query_vector = text_model.encode([query],convert_to_numpy=True)
     # shape: (1, 384) — one vector, since we passed one string
 
     # Compare against the TEXT-ONLY embeddings (the `embeddings`
