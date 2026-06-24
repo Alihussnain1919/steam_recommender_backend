@@ -11,6 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 import numpy as np
 from src.recommender import load_everything,build_similarity_matrices, hybrid_similarity
+from sentence_transformers import SentenceTransformer
 
 
 # ------------------------------------------------------------
@@ -52,7 +53,10 @@ print("Loading data and building similarity matrix (this happens once)...")
 df, embeddings = load_everything()
 text_sim, numeric_sim = build_similarity_matrices(df, embeddings)
 similarity_matrix = hybrid_similarity(text_sim, numeric_sim, text_weight=0.8, numeric_weight=0.2)
+print("Loading embedding model for free-text search...")
+text_model = SentenceTransformer("all-MiniLM-L6-v2")
 print("Ready.")
+
 
 
 # ------------------------------------------------------------
@@ -122,6 +126,63 @@ def get_game(app_id: int):
         "publishers": row["publishers"],
         "header_image": row["header_image"]
     }
+
+
+@app.get("/search")
+def search_by_text(query: str, top_n: int = 5, max_price: float = 80.0, genre: str = "All"):
+    """
+    Lets the user type ANY free text (e.g. "relaxing farming game"
+    or "scary survival horror with friends") instead of picking
+    an exact game name.
+
+    HOW: we embed the typed text with the SAME model used for
+    games, then compare that single vector against every game's
+    text embedding using cosine similarity — no retraining needed,
+    because the model already maps similar meaning to nearby vectors
+    regardless of whether the text came from a game description or
+    a user query.
+    """
+    if not query or not query.strip():
+        raise HTTPException(status_code=400, detail="Query cannot be empty")
+
+    # Encode the user's text into the same 384-dim space as the games
+    query_vector = text_model.encode([query])
+    # shape: (1, 384) — one vector, since we passed one string
+
+    # Compare against the TEXT-ONLY embeddings (the `embeddings`
+    # array from Day 4), not the hybrid matrix — the hybrid matrix
+    # is game-vs-game, but here we have a NEW vector that isn't
+    # one of the 999 games, so we compute similarity fresh.
+    from sklearn.metrics.pairwise import cosine_similarity
+    sims = cosine_similarity(query_vector, embeddings)[0]
+    # sims shape: (999,) — similarity of the query to every game
+
+    ranked_indices = sims.argsort()[::-1]
+
+    results = df.iloc[ranked_indices].copy()
+    results["similarity_score"] = sims[ranked_indices]
+
+    if genre != "All":
+        results = results[results["genres"].str.contains(genre, na=False)]
+    results = results[results["price_eur"] <= max_price]
+    results = results.head(top_n)
+
+    results = results.replace({np.nan: None})
+    output = results[
+        [
+        "app_id",
+        "name",
+        "genres",
+        "tags",
+        "price_eur",
+        "metacritic_score",
+        "similarity_score",
+        "header_image"
+        ]
+    ].to_dict("records")
+
+    return {"query_game":  query, "recommendations": output}
+
 
 # ------------------------------------------------------------
 # Endpoint 4: get recommendations for a game

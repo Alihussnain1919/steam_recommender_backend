@@ -1,5 +1,41 @@
 # Steam Recommender System
 
+
+## 🛠️ Step-by-Step Local Setup & Execution
+
+Follow these precise steps to pull down the repository, set up your localized isolated workspace, and start up the server.
+
+### 1. Initialize and Activate the Virtual Environment (`.venv`)
+Before installing anything, always establish your isolated virtual environment folder to ensure libraries do not clash with your system.
+
+```bash
+# Move inside the project folder
+cd steam_recommender
+
+# Create a fresh local virtual environment
+python -m venv .venv
+
+# Activate the virtual environment:
+# On macOS / Linux:
+source .venv/bin/activate
+
+# On Windows (Command Prompt):
+# .venv\Scripts\activate.bat
+# On Windows (PowerShell):
+# .venv\Scripts\Activate.ps1
+
+
+2. Install Packages from Scratch
+Once your terminal shows the active (.venv) prefix, run pip to load all development, vector processing, and machine learning dependencies:
+Bash
+pip install -r src/requirements.txt
+3. Run the Backend API Service Locally
+To run the server locally on your laptop with live hot-reloading (the server resets every time you change code), run this:
+Bash
+uvicorn src.api:app --reload --port 8000
+Your local microservice will now be active and listening at: http://localhost:8000
+
+
 ## Project Architecture Flowchart
 
 ## 📦 Project Libraries & Tools Breakdown
@@ -19,49 +55,12 @@
 
 
 
-# Steam Recommender System — Day 1: Getting the Data
+# Steam Recommendation System Backend
 
-This is the first step of our project. Our main goal today is to gather all the game information we need from Steam and save it safely onto our computer.
-
----
-
-## 💡 Our Strategy: The "Hybrid" Approach
-
-To get the best data possible while proving our coding skills to our professor, we are using two different methods at the exact same time:
-
-### 1. The Core Data (Steam's Official API)
-* **What it does:** Instead of trying to read Steam's main search website—which is built using JavaScript and often comes up completely empty—we talk directly to Steam's internal data system (the API). 
-* **What we get:** This cleanly hands us all the main facts about a game without any website layout issues.
-* **Fields captured:** Game Title, unique ID, Price, Main Genres, Developers, and if it works on Mac.
-
-### 2. The Bonus Data (BeautifulSoup Web Scraping)
-* **What it does:** Steam's official system leaves out some really cool details. To fix this, our script takes the Game ID and goes straight to that specific game's public store page to scrape the missing pieces using BeautifulSoup.
-* **What we get:** This gives us the deeper context needed to build a great recommendation system.
-* **Fields captured:** Community User Tags (like "Difficult" or "Atmospheric") and Player Reviews (like "Very Positive").
+This project serves as a high-performance content-based recommendation engine for Steam games. Powered by **FastAPI** and **Sentence-Transformers**, the backend uses semantic textual data (like descriptions and genres) to pre-compute vector embeddings for thousands of games. It exposes an active microservice API that instantly provides highly accurate game suggestions to our React frontend based on a user's selected game, budget preferences, or favorite genres.
 
 ---
 
-## 📊 How the Data Flows (Step-by-Step)
-
-1. **Start:** We give our script a list of game IDs we want to look up.
-2. **Step A (The API):** The script asks Steam's backend for the main details (Title, Price, Developer).
-   * *Safe Guard:* If Steam tells us we are asking too fast, the script automatically pauses for 10 seconds to cool down.
-3. **Step B (The Scraper):** The script opens the game's actual webpage in the background to grab the player tags and review scores using BeautifulSoup.
-4. **Step C (The Merge):** The script glues both pieces of data together into a single game profile.
-5. **Step D (The Backup):** The script saves a raw backup file of that game instantly, just in case our laptop battery dies or the internet drops.
-6. **Step E (The Pause):** The script takes a short 1.5-second nap so Steam doesn't mistake us for a malicious spam bot.
-7. **Finish:** Once all games are checked, it organizes everything into a clean spreadsheet file called `steam_games.csv`.
-
----
-
-## 🛠️ Smart Features Built Into Our Code
-
-I didn't just write a basic loop. We built this script to handle real-world problems:
-* **Being a Good Internet Citizen:** By pausing for 1.5 seconds between games, I stay within Steam's rules and prevent our IP address from getting banned.
-* **No Lost Progress:** Because it saves games one by one into the `/data/raw/` folder, I can stop the script at any time and we won't lose our data.
-
-
-![Data Pipeline Flowchart](reports/figures/day1_scraping_flow.png)
 
 
 
