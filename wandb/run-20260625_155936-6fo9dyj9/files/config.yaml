@@ -1,0 +1,44 @@
+_wandb:
+    value:
+        cli_version: 0.27.2
+        e:
+            mlxthpk9appe2hp3te4tmqii6t1d0683:
+                codePath: src/tuning.py
+                codePathLocal: src/tuning.py
+                email: alihussnain1919@gmail.com
+                executable: /Users/macbookair/steam_recommender/.venv/bin/python
+                git:
+                    commit: 305d2c48fcbc4dcd875f111c508959d4f171a91f
+                    remote: https://github.com/Alihussnain1919/steam_recommender_backend.git
+                host: MacBookAir.fritz.box
+                os: macOS-26.5.1-arm64-arm-64bit
+                program: /Users/macbookair/steam_recommender/src/tuning.py
+                python: CPython 3.12.4
+                root: /Users/macbookair/steam_recommender
+                startedAt: "2026-06-25T13:59:36.083232Z"
+                writerId: mlxthpk9appe2hp3te4tmqii6t1d0683
+        m: []
+        python_version: 3.12.4
+        t:
+            "1":
+                - 5
+                - 35
+                - 53
+            "2":
+                - 5
+                - 35
+                - 53
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.12.4
+            "5": 0.27.2
+            "10":
+                - 20
+            "12": 0.27.2
+            "13": darwin-arm64
+numeric_weight:
+    value: 0.1917460043016852
+text_weight:
+    value: 0.8082539956983148

@@ -1,0 +1,17 @@
+{"time":"2026-06-25T15:59:27.491292+02:00","level":"INFO","msg":"wandb-core"}
+{"time":"2026-06-25T15:59:27.49139+02:00","level":"INFO","msg":"stream: starting","core version":"0.27.2"}
+{"time":"2026-06-25T15:59:27.795098+02:00","level":"INFO","msg":"stream: created new stream","id":"audograb"}
+{"time":"2026-06-25T15:59:27.795175+02:00","level":"INFO","msg":"handler: started"}
+{"time":"2026-06-25T15:59:27.795453+02:00","level":"INFO","msg":"stream: started"}
+{"time":"2026-06-25T15:59:27.795468+02:00","level":"INFO","msg":"sender: started"}
+{"time":"2026-06-25T15:59:27.795464+02:00","level":"INFO","msg":"writer: started","stream_id":"audograb"}
+{"time":"2026-06-25T15:59:28.249155+02:00","level":"INFO","msg":"filestream: sending request","total_files":1}
+{"time":"2026-06-25T15:59:28.629472+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-06-25T15:59:28.950137+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-06-25T15:59:28.950454+02:00","level":"INFO","msg":"filestream: sending request","total_files":2,"history_offset":0,"history_lines":1,"uploaded_len":4,"complete":true,"exit_code":0}
+{"time":"2026-06-25T15:59:29.182381+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-06-25T15:59:29.184484+02:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-06-25T15:59:29.187225+02:00","level":"INFO","msg":"stream: finishing up"}
+{"time":"2026-06-25T15:59:29.187235+02:00","level":"INFO","msg":"handler: closed"}
+{"time":"2026-06-25T15:59:29.187288+02:00","level":"INFO","msg":"sender: closed"}
+{"time":"2026-06-25T15:59:29.187295+02:00","level":"INFO","msg":"stream: all finished"}

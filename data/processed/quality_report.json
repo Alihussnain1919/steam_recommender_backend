@@ -225,17 +225,17 @@
       "games_affected": 332,
       "total_tags_removed": 422,
       "noise_tag_list": [
-        "Gore",
-        "Mature",
-        "18+",
         "Violent",
         "Early Access",
-        "Downloadable Content",
-        "Free to Play",
-        "Nudity",
+        "NSFW",
         "Adult Only",
+        "Mature",
+        "Free to Play",
+        "Gore",
         "Sexual Content",
-        "NSFW"
+        "18+",
+        "Downloadable Content",
+        "Nudity"
       ]
     },
     "metacritic_bias": {
@@ -253,7 +253,7 @@
     "Removed 0 exact duplicate app_ids",
     "Removed 0 semantic duplicates (same game, different editions)",
     "Removed 2 games with boilerplate/useless descriptions",
-    "Cleaned noise tags from all games: {'Gore', 'Mature', '18+', 'Violent', 'Early Access', 'Downloadable Content', 'Free to Play', 'Nudity', 'Adult Only', 'Sexual Content', 'NSFW'}",
+    "Cleaned noise tags from all games: {'Violent', 'Early Access', 'NSFW', 'Adult Only', 'Mature', 'Free to Play', 'Gore', 'Sexual Content', '18+', 'Downloadable Content', 'Nudity'}",
     "Added has_metacritic (0/1) and metacritic_normalized (0\u20131) columns",
     "Fixed negative prices and capped extreme prices at \u20ac80",
     "Normalized review_score labels",
